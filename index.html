@@ -1,40 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- font awesome and google fonts -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
 
-    <link href="https://fonts.googleapis.com/css?family=Raleway%7CRighteous" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway%7CRighteous"
+      rel="stylesheet"
+    />
 
+    <title>Memo Game - JavaScript</title>
 
-    <title> Memo Game - JavaScript</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
 
-    <link rel="stylesheet" href="assets/css/style.css">
-    
     <script src="assets/js/script.js" defer></script>
+  </head>
 
-</head>
-
-<body>
+  <body>
     <div class="memo">
-        <div class="commands">
-            <button>Let's Play!</button>
-            <div class="results">
-                <div class="trials">moves: 0</div>
-                <div class="clock">time: 0 sec</div>
-            </div>
-        </div>
-        <div class="playGround-container">
-            <div class="playGround" data-dimension="4"></div>
-            <div class="win">Well Done! You won!</div>
-        </div>
+      <div class="commands">
+        <button>Let's Play!</button>
+        <div class="results"></div>
+      </div>
+      <div class="playGround-container">
+        <div class="playGround" data-dimension="4"></div>
+        <div class="win">Well Done! You won!</div>
+      </div>
     </div>
-
-   
-</body>
-
+  </body>
 </html>

@@ -1,8 +1,9 @@
 const selectors = {
     playGroundContainer: document.querySelector('.playGround-container'),
     playGround: document.querySelector('.playGround'),
-    clock: document.querySelector('.clock'),
+
     trials: document.querySelector('.trials'),
+    clock: document.querySelector('.clock'),
     start: document.querySelector('button'),
     win: document.querySelector('.win')
 };
@@ -50,15 +51,30 @@ const generateMemo = () => {
         throw new Error("The dimension of the pley ground must be an even number.");
     }
 
-    const emojis = ['🥔', '🍒', '🥑', '🌽', '🥕', '🍇', '🍉', '🍌', '🥭', '🍍'];
-    const picks = pickRandom(emojis, (dimensions * dimensions) / 2);
+
+
+
+
+    const images = [
+        { src: 'https://bit.ly/3JEnbxb', alt: 'React' },
+        { src: 'https://bit.ly/3JEnbxb', alt: 'JS' },
+        { src: 'https://bit.ly/3JEnbxb', alt: 'HTML' },
+        { src: 'https://bit.ly/3JEnbxb', alt: 'CSS' },
+        { src: 'https://bit.ly/3JEnbxb', alt: 'Svelte' },
+        { src: 'https://bit.ly/3JEnbxb', alt: 'Jest' },
+        { src: 'https://bit.ly/3JEnbxb', alt: 'Cypress' },
+        { src: 'https://bit.ly/3JEnbxb', alt: 'Sass' },
+        { src: 'https://bit.ly/3JEnbxb', alt: 'AI' },
+        { src: 'https://bit.ly/3JEnbxb', alt: 'Phaser' }
+    ]
+    const picks = pickRandom(images, (dimensions * dimensions) / 2);
     const items = shuffle([...picks, ...picks]);
     const symbols = `
         <div class="playGround" style="grid-template-columns: repeat(${dimensions}, auto)">
             ${items.map(item => `
                 <div class="symbol">
-                    <div class="symbol-front"></div>
-                    <div class="symbol-back">${item}</div>
+                    <div class="symbol-front">${item.alt}</div>
+                    <div class="symbol-back">${item.src}</div>
                 </div>
             `).join('')}
        </div>
@@ -76,12 +92,12 @@ const startMemo = () => {
     state.loop = setInterval(() => {
         state.totalClock++;
 
-        selectors.moves.innerText = `${state.totalFlicks} moves`;
-        selectors.timer.innerText = `time: ${state.totalClock} sec`;
+        selectors.trials.innerText = `${state.totalFlicks} moves`;
+        selectors.clock.innerText = `time: ${state.totalClock} sec`;
     }, 1000);
 };
 
-const flickBackSymbol= () => {
+const flickBackSymbol = () => {
     document.querySelectorAll('.symbol:not(.matched)').forEach(symbol => {
         symbol.classList.remove('flicked');
     });
