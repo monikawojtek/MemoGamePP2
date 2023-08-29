@@ -1,9 +1,8 @@
 const selectors = {
     playGroundContainer: document.querySelector('.playGround-container'),
     playGround: document.querySelector('.playGround'),
-
-    trials: document.querySelector('.trials'),
     clock: document.querySelector('.clock'),
+    trials: document.querySelector('.trials'),
     start: document.querySelector('button'),
     win: document.querySelector('.win')
 };
@@ -15,6 +14,8 @@ const state = {
     totalClock: 0,
     loop: null
 };
+
+
 
 const shuffle = array => {
     const clonedArray = [...array];
@@ -51,30 +52,15 @@ const generateMemo = () => {
         throw new Error("The dimension of the pley ground must be an even number.");
     }
 
-
-
-
-
-    const images = [
-        { src: 'https://bit.ly/3JEnbxb', alt: 'React' },
-        { src: 'https://bit.ly/3JEnbxb', alt: 'JS' },
-        { src: 'https://bit.ly/3JEnbxb', alt: 'HTML' },
-        { src: 'https://bit.ly/3JEnbxb', alt: 'CSS' },
-        { src: 'https://bit.ly/3JEnbxb', alt: 'Svelte' },
-        { src: 'https://bit.ly/3JEnbxb', alt: 'Jest' },
-        { src: 'https://bit.ly/3JEnbxb', alt: 'Cypress' },
-        { src: 'https://bit.ly/3JEnbxb', alt: 'Sass' },
-        { src: 'https://bit.ly/3JEnbxb', alt: 'AI' },
-        { src: 'https://bit.ly/3JEnbxb', alt: 'Phaser' }
-    ]
-    const picks = pickRandom(images, (dimensions * dimensions) / 2);
+    const animals = ['🐹', '🐩', '🐥', '🐠', '🐌', '🐋', '🐷', '🐢', '🐍', '🐨', '🐓', '🐧', '🐼', '🐑', '🐦', '🐻', '🦎', '🐐', '🦍', '🦁', '🐭', '🐗', '🐜', '🦅', '🦜', '🦝', '🦢', '🦫', '🦉', '🐴', '🐮' ];
+    const picks = pickRandom(animals, (dimensions * dimensions) / 2);
     const items = shuffle([...picks, ...picks]);
     const symbols = `
         <div class="playGround" style="grid-template-columns: repeat(${dimensions}, auto)">
             ${items.map(item => `
                 <div class="symbol">
-                    <div class="symbol-front">${item.alt}</div>
-                    <div class="symbol-back">${item.src}</div>
+                    <div class="symbol-front"></div>
+                    <div class="symbol-back">${item}</div>
                 </div>
             `).join('')}
        </div>
@@ -147,6 +133,9 @@ const flickSymbol = symbol => {
     }
 };
 
+
+
+
 const attachEventListeners = () => {
     document.addEventListener('click', event => {
         const eventTarget = event.target;
@@ -158,6 +147,17 @@ const attachEventListeners = () => {
             startMemo();
         }
     });
+};
+
+const stopMemo = () => {
+    state.memoStarted = false;
+    state.flickedSymbols = 0;
+    state.totalFlicks = 0;
+    state.totalClock = 0;
+    state.memoStarted = false;
+    clearInterval(state.loop);
+    loopstate.loop = null;
+
 };
 
 generateMemo();
