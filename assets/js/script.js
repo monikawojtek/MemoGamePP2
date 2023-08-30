@@ -52,7 +52,7 @@ const generateMemo = () => {
         throw new Error("The dimension of the pley ground must be an even number.");
     }
 
-    const animals = ['🐹', '🐩', '🐥', '🐠', '🐌', '🐋', '🐷', '🐢', '🐍', '🐨', '🐓', '🐧', '🐼', '🐑', '🐦', '🐻', '🦎', '🐐', '🦍', '🦁', '🐭', '🐗', '🐜', '🦅', '🦜', '🦝', '🦢', '🦫', '🦉', '🐴', '🐮' ];
+    const animals = ['🐹', '🐩', '🐥', '🐠', '🐌', '🐋', '🐷', '🐢', '🐍', '🐨', '🐓', '🐧', '🐼', '🐑', '🐦', '🐻', '🦎', '🐐', '🦍', '🦁', '🐭', '🐗', '🐜', '🦅', '🦜', '🦝', '🦢', '🦫', '🦉', '🐴', '🐮'];
     const picks = pickRandom(animals, (dimensions * dimensions) / 2);
     const items = shuffle([...picks, ...picks]);
     const symbols = `
@@ -148,17 +148,7 @@ const attachEventListeners = () => {
         }
     });
 };
-
-const stopMemo = () => {
-    state.memoStarted = false;
-    state.flickedSymbols = 0;
-    state.totalFlicks = 0;
-    state.totalClock = 0;
-    state.memoStarted = false;
-    clearInterval(state.loop);
-    loopstate.loop = null;
-
-};
+;
 
 generateMemo();
 attachEventListeners();

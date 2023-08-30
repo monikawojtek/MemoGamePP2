@@ -1,12 +1,12 @@
 html {
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, #00b5fc 0%, #1900fc 50%, #00f4fc 100%);
+    background: #E7DFC6;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .memo {
-   
+
     top: 50%;
     left: 50%;
     position: absolute;
@@ -31,11 +31,11 @@ button {
 }
 
 .disabled {
-    color: #ff9f9f;
+    color: #131b23;
 }
 
 .results {
-    color: rgb(230, 21, 160);
+    color: #2274A5;
     font-size: 14pt;
 }
 
@@ -55,7 +55,7 @@ button {
 .win {
     border-radius: 5px;
     box-shadow: 0 25px 50px rgb(33 33 33 / 25%);
-    background: linear-gradient(180deg, #00b5fc 0%, #1900fc 50%, #00f4fc 100%);
+    background: #E7DFC6;
     transition: transform .6s cubic-bezier(0.4, 0.0, 0.2, 1);
     backface-visibility: hidden;
 }
@@ -74,17 +74,17 @@ button {
     height: 100px;
     position: relative;
     cursor: pointer;
-    
+
 }
 
 .symbol-front,
 .symbol-back {
-    
+
     border-radius: 5px;
     width: 100%;
     height: 100%;
     position: absolute;
-    background: #095f79;
+    background: #816C61;
     transition: transform .7s cubic-bezier(0.4, 0.0, 0.2, 1);
     backface-visibility: hidden;
 }
@@ -95,7 +95,7 @@ button {
     user-select: none;
     text-align: center;
     line-height: 100px;
-    background: #fae390;
+    background: #E9F1F7;
 }
 
 .symbol.flicked .symbol-front {
@@ -107,27 +107,27 @@ button {
 }
 
 .win {
-    
+
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     position: absolute;
     text-align: center;
-    background: #FDF8E6;
+    background: #2274A5;
     transform: rotateY(180deg) rotateZ(50deg);
 }
 
 .win-text {
-    
+
     top: 50%;
     left: 50%;
     position: absolute;
     transform: translate(-50%, -50%);
     font-size: 21pt;
-    color: #c0384a;
+    color: #131b23;
 }
 
 .highlight {
-    color: #2afc00;
+    color: #06c8eb;
 }
